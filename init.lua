@@ -7,3 +7,8 @@ augroup RestoreCursorShapeOnExit
     autocmd VimLeave * set guicursor=a:ver30-iCursor-blinkwait300-blinkon200-blinkoff150
 augroup END
 ]])
+
+vim.cmd([[
+  hi NeoTreeNormal guibg=NONE
+  hi NeoTreeNormalNC guibg=NONE
+]])
