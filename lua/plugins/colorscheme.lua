@@ -4,8 +4,8 @@ return {
   opts = {
     transparent = true,
     style = {
-      sidebars = "transparent",
-      floats = "transparent",
+      sidebars = "normal",
+      floats = "normal",
     },
   },
 }

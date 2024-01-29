@@ -9,6 +9,8 @@ augroup END
 ]])
 
 vim.cmd([[
+  hi CursorLine guibg=NONE
   hi NeoTreeNormal guibg=NONE
   hi NeoTreeNormalNC guibg=NONE
+  hi TroubleNormal guibg=NONE
 ]])
