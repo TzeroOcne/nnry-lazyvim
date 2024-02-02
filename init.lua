@@ -16,3 +16,6 @@ vim.cmd([[
   hi NeoTreeNormalNC guibg=NONE
   hi TroubleNormal guibg=NONE
 ]])
+
+vim.api.nvim_set_hl(0, 'LineNr', { fg='#009090' })
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#00ffff' })
