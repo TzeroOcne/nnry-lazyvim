@@ -11,5 +11,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.templ" },
   callback = function ()
     vim.bo.filetype = "templ"
+    vim.cmd(":LspSaga htmx")
   end
 })
