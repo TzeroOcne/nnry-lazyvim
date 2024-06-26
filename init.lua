@@ -17,5 +17,6 @@ vim.cmd([[
   hi TroubleNormal guibg=NONE
 ]])
 
-vim.api.nvim_set_hl(0, 'LineNr', { fg='#009090' })
-vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#00ffff' })
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#009090', bold=true })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#009090', bold=true })
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='Cyan' })
