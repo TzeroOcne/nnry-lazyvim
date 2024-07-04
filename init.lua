@@ -20,3 +20,4 @@ vim.cmd([[
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#009090', bold=true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#009090', bold=true })
 vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='Cyan' })
+vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = '#b07f38' })
