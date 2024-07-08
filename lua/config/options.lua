@@ -8,4 +8,5 @@ opt.nuw = 8
 -- opt.shell = "bash.exe"
 -- opt.shell = "pwsh.exe"
 vim.g.autoformat = false
+vim.o.fileformat = 'unix'
 

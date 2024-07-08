@@ -6,6 +6,9 @@ return {
     { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
   },
   opts = {
-    -- Your setup opts here
+    outline_window = {
+      show_numbers = true,
+      show_relative_numbers = true,
+    },
   },
 }

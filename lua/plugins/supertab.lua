@@ -14,8 +14,8 @@ return {
     opts.formatting = vim.tbl_extend('force', default.formatting, {
       ---@param vim_item vim.CompletedItem
       format = function(_, vim_item)
-        vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
-        vim_item.menu = string.sub(vim_item.menu or '', 1, 20)
+        vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- Length limit for completeion name
+        vim_item.menu = string.sub(vim_item.menu or '', 1, 20) -- Length limit for completion detail
         return vim_item
       end
     })
