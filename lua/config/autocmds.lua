@@ -29,3 +29,5 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.cmd(":LspSaga htmx")
   end
 })
+
+vim.api.nvim_set_hl(0, 'TreesitterContext', {  })

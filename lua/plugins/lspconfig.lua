@@ -1,5 +1,6 @@
 local lsp_options = {
   servers = {
+    gdscript = {},
     cssls = {
       settings = {
         css = {

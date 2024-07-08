@@ -1,5 +1,5 @@
 return {
-  "hrsh7th/nvim-cmp",
+  "nvim-cmp",
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local has_words_before = function()
@@ -11,6 +11,19 @@ return {
     local cmp = require("cmp")
     local default = require('cmp.config.default')();
     opts.sorting = default.sorting;
+    opts.formatting = vim.tbl_extend('force', default.formatting, {
+      ---@param vim_item vim.CompletedItem
+      format = function(_, vim_item)
+        vim_item.abbr = string.sub(vim_item.abbr, 1, 20)
+        vim_item.menu = string.sub(vim_item.menu or '', 1, 20)
+        return vim_item
+      end
+    })
+    opts.view = {
+      docs = {
+        auto_open = false,
+      },
+    }
 
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
@@ -38,7 +51,13 @@ return {
           fallback()
         end
       end, { "i", "s" }),
+      ["<M-m>"] = cmp.mapping(function()
+        if cmp.visible_docs() then
+          cmp.close_docs()
+        else
+          cmp.open_docs()
+        end
+      end, { "i" }),
     })
   end,
 }
-
