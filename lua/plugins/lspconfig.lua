@@ -1,4 +1,5 @@
 local lsp_options = {
+  inlay_hints = { enabled = false },
   servers = {
     gdscript = {},
     cssls = {
