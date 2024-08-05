@@ -3,7 +3,7 @@ return {
   lazy = true,
   opts = {
     transparent = true,
-    style = {
+    styles = {
       sidebars = "normal",
       floats = "normal",
     },
