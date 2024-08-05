@@ -25,3 +25,7 @@ vim.api.nvim_set_hl(0, 'TreesitterContextLineNumberBottom', { underline=true, sp
 vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='Cyan' })
 vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = '#b07f38' })
 vim.api.nvim_set_hl(0, 'TreesitterContext', { link='NONE' })
+
+-- NEOTREE
+vim.api.nvim_set_hl(0, 'NeoTreeMessage', { fg = '#b07f38' })
+vim.api.nvim_set_hl(0, 'NeoTreeFileName', { fg = '#82f3ff' })
