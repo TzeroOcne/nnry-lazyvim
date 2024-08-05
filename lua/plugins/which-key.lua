@@ -1,9 +1,14 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
+  opts_extend = { "spec" },
   opts = {
-    defaults = {
-      ["<leader>t"] = { name = "+term" },
+    defaults = {},
+    spec = {
+      {
+        mode = { "n", "v" },
+        { "<leader>t", group = "term" },
+      },
     },
   },
 }
