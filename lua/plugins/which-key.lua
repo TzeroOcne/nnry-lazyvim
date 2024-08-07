@@ -8,6 +8,7 @@ return {
       {
         mode = { "n", "v" },
         { "<leader>t", group = "term" },
+        { "<leader>m", desc = "Mini Map" },
       },
     },
   },
