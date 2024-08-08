@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 local map = vim.keymap.set
 local unmap = vim.keymap.del
+
+local outline = require('outline')
 local LazyVim = require('lazyvim.util')
 
 unmap("n", "<C-_>")
@@ -22,6 +24,7 @@ local function is_file_buffer(buf)
 end
 
 local function close_all_file_buffers()
+  outline.close()
   local buffers = vim.api.nvim_list_bufs()
   for _, buf in ipairs(buffers) do
     if is_file_buffer(buf) then
