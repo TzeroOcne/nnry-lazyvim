@@ -21,6 +21,11 @@ end
 --   autocmd ModeChanged * lua leave_snippet()
 -- ]])
 
+vim.api.nvim_create_autocmd("ModeChanged", {
+  pattern = { "*" },
+  callback = vim.snippet.stop,
+})
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   group = augroup("AutoFileType"),
   pattern = { "*.templ" },
