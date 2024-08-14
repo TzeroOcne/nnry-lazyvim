@@ -10,6 +10,7 @@ local LazyVim = require('lazyvim.util')
 unmap("n", "<C-_>")
 
 map("n", "<C-\\>", "<cmd>Neotree<cr>")
+map("n", "<C-n>", "<cmd>nohl<cr>")
 map("n", "<Bslash>O", "O<Esc><Down>", { desc = "New Line Above" })
 map("n", "<Bslash>o", "o<Esc><Up>", { desc = "New Line Below" })
 
