@@ -5,7 +5,7 @@ return {
     local minimap = require('mini.map');
     return {
       {
-        "<leader>mm",
+        "<leader>Mm",
         minimap.toggle,
         desc = "Toggle Mini Map"
       },
