@@ -10,6 +10,7 @@ return {
 
     local cmp = require("cmp")
     local default = require('cmp.config.default')();
+    opts.preselect = 'None';
     opts.sorting = default.sorting;
     opts.formatting = vim.tbl_extend('force', default.formatting, {
       ---@param vim_item vim.CompletedItem

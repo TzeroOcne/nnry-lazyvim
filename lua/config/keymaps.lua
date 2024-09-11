@@ -34,6 +34,27 @@ local function close_all_file_buffers()
   end
 end
 
+local function close_all_file_buffers_non_visible()
+  outline.close()
+
+  -- Get all visible buffers
+  local visible_buffers = {}
+  local windows = vim.api.nvim_list_wins()
+  for _, win in ipairs(windows) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    visible_buffers[buf] = true
+  end
+
+  -- Get all buffers and close the ones that are not visible
+  local buffers = vim.api.nvim_list_bufs()
+  for _, buf in ipairs(buffers) do
+    if is_file_buffer(buf) and not visible_buffers[buf] then
+      vim.api.nvim_buf_delete(buf, { force = true })
+    end
+  end
+end
+
 -- Optional: Create a key mapping to run this function
 map('n', '<leader>bx', close_all_file_buffers, { noremap = true, silent = true, desc = "Close all file buffer" })
+map('n', '<leader>bo', close_all_file_buffers_non_visible, { noremap = true, silent = true, desc = "Close all non visible file buffer" })
 
