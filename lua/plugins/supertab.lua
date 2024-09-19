@@ -1,5 +1,8 @@
 return {
   "nvim-cmp",
+  dependencies = {
+    { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
+  },
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     local has_words_before = function()
@@ -12,12 +15,17 @@ return {
     local default = require('cmp.config.default')();
     opts.preselect = 'None';
     opts.sorting = default.sorting;
+    local format_kinds = function(_, vim_item)
+      vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- Length limit for completeion name
+      vim_item.menu = string.sub(vim_item.menu or '', 1, 20) -- Length limit for completion detail
+      return vim_item
+    end
     opts.formatting = vim.tbl_extend('force', default.formatting, {
+      ---@param entry cmp.Entry
       ---@param vim_item vim.CompletedItem
-      format = function(_, vim_item)
-        vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- Length limit for completeion name
-        vim_item.menu = string.sub(vim_item.menu or '', 1, 20) -- Length limit for completion detail
-        return vim_item
+      format = function(entry, vim_item)
+        format_kinds(entry, vim_item)
+        return require('tailwindcss-colorizer-cmp').formatter(entry, vim_item)
       end
     })
     opts.view = {
