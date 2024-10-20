@@ -13,7 +13,8 @@ return {
 
     local cmp = require("cmp")
     local default = require('cmp.config.default')();
-    opts.preselect = 'None';
+    opts.preselect = cmp.PreselectMode.None;
+    opts.completion.completeopt = "menu,menuone,noinsert,noselect";
     opts.sorting = default.sorting;
     local format_kinds = function(_, vim_item)
       vim_item.abbr = string.sub(vim_item.abbr, 1, 30) -- Length limit for completeion name
