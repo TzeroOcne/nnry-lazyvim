@@ -5,7 +5,7 @@ local map = vim.keymap.set
 local unmap = vim.keymap.del
 
 local outline = require('outline')
-local LazyVim = require('lazyvim.util')
+local Snacks = require('snacks')
 
 unmap("n", "<C-_>")
 
@@ -14,9 +14,9 @@ map("n", "<C-n>", "<cmd>nohl<cr>")
 map("n", "<Bslash>O", "O<Esc><Down>", { desc = "New Line Above" })
 map("n", "<Bslash>o", "o<Esc><Up>", { desc = "New Line Below" })
 
-map("n", "<C-_>", function() LazyVim.terminal("zsh") end, { desc = "Open zsh term" })
-map("n", "<leader>tz", function() LazyVim.terminal("zsh") end, { desc = "Open zsh term" })
-map("n", "<leader>tp", function() LazyVim.terminal("pwsh") end, { desc = "Open powershell term" })
+map("n", "<C-_>", function() Snacks.terminal("zsh") end, { desc = "Open zsh term" })
+map("n", "<leader>tz", function() Snacks.terminal("zsh") end, { desc = "Open zsh term" })
+map("n", "<leader>tp", function() Snacks.terminal("pwsh") end, { desc = "Open powershell term" })
 
 local function is_file_buffer(buf)
   return vim.api.nvim_buf_is_loaded(buf) and
